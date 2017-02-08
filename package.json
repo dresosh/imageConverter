@@ -1,0 +1,16 @@
+{
+  "name": "converter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andre Soschinski",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp-image-resize-ar": "^0.1.2",
+    "gulp-imagemin": "^3.1.1"
+  }
+}
