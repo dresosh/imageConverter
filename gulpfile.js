@@ -32,6 +32,13 @@ gulp.task('png', function () {
 });
 
 // Deletes converted dir
+gulp.task('del', function () {
+  del([
+     'converted'
+  ])
+})
+
+// Deletes images in images dir
 gulp.task('clean', function () {
   del([
      'images/**/*.jpg'
