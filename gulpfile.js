@@ -41,12 +41,17 @@ gulp.task('del', function () {
 // Deletes images in images dir
 gulp.task('clean', function () {
   del([
-     'images/**/*.jpg'
-    ,'images/**/*.png'
-    ,'images/**/*.tif'
-    ,'images/**/*.bmp'
-    ,'images/**/*.jpeg'
+    'images/*'
+  ])
+})
+
+// Strips pdfs, svgs, docx files
+gulp.task('strip', function () {
+  del([
+     'images/**/*.pdf'
     ,'images/**/*.svg'
+    ,'images/**/*.docx'
+    ,'converted'
   ])
 })
 
