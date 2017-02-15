@@ -5,6 +5,7 @@ var gulp        = require( 'gulp' )
    ,images      = 'images/**'
 
 
+// Converts jpegs
 gulp.task('convert', function () {
  gulp.src( images )
    .pipe(imagemin())
@@ -17,6 +18,7 @@ gulp.task('convert', function () {
    .pipe(gulp.dest('./converted'));
 });
 
+// Converts pngs
 gulp.task('png', function () {
  gulp.src( images )
    .pipe(imagemin())
@@ -29,10 +31,18 @@ gulp.task('png', function () {
    .pipe(gulp.dest('./converted'));
 });
 
-gulp.task('del', function () {
+// Deletes converted dir
+gulp.task('clean', function () {
   del([
-    'converted'
+     'images/**/*.jpg'
+    ,'images/**/*.png'
+    ,'images/**/*.tif'
+    ,'images/**/*.bmp'
+    ,'images/**/*.jpeg'
+    ,'images/**/*.svg'
   ])
 })
+
+
 
 gulp.task('default', ['del', 'convert'])
