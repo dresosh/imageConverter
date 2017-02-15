@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "del": "^2.2.2",
+    "gulp": "^3.9.1",
     "gulp-image-resize-ar": "^0.1.2",
     "gulp-imagemin": "^3.1.1"
   }
