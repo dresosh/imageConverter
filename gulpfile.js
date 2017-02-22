@@ -3,14 +3,14 @@ var gulp        = require( 'gulp' )
    ,del         = require( 'del' )
    ,imagemin    = require('gulp-imagemin')
    ,images      = 'images/**'
-
+   ,imageWidth  = 1600
 
 // Converts jpegs
 gulp.task('convert', function () {
  gulp.src( images )
    .pipe(imagemin())
    .pipe(imageResize({
-     width : 1300,
+     width : imageWidth,
      crop : false,
      upscale : false,
      format: 'jpg'
@@ -23,7 +23,7 @@ gulp.task('png', function () {
  gulp.src( images )
    .pipe(imagemin())
    .pipe(imageResize({
-     width : 1300,
+     width : imageWidth,
      crop : false,
      upscale : false,
      format: 'png'
