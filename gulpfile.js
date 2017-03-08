@@ -4,7 +4,8 @@ var gulp        = require( 'gulp' )
    ,imagemin    = require('gulp-imagemin')
    ,images      = 'images/**'
    ,imageWidth  = 1600
-   ,thumb  = 1600
+   ,thumbWt     = 420
+   ,thumbHt     = 280
 
 // Converts jpegs
 gulp.task('convert', function () {
@@ -24,8 +25,8 @@ gulp.task('thumb', function () {
  gulp.src( images )
    .pipe(imagemin())
    .pipe(imageResize({
-     width : 420,
-     height: 280,
+     width : thumbWt,
+     height: thumbHt,
      crop : true,
      upscale : false,
      format: 'jpg'
@@ -50,7 +51,8 @@ gulp.task('png', function () {
 // Deletes converted dir
 gulp.task('del', function () {
   del([
-     'converted'
+     'converted',
+     'thumbnails'
   ])
 })
 
@@ -73,4 +75,4 @@ gulp.task('strip', function () {
 
 
 
-gulp.task('default', ['del', 'convert'])
+gulp.task('default', ['del', 'convert', 'thumb'])
