@@ -57,9 +57,11 @@ gulp.task('del', function () {
 })
 
 // Deletes images in images dir
-gulp.task('clean', function () {
+gulp.task('all', function () {
   del([
-    'images/*'
+    'images/*',
+    'converted',
+    'thumbnails'
   ])
 })
 
