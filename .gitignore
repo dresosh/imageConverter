@@ -2,3 +2,4 @@ node_modules
 converted
 thumbnails
 .DS_Store
+images/**
