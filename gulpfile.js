@@ -3,13 +3,16 @@ var gulp        = require( 'gulp' )
    ,del         = require( 'del' )
    ,imagemin    = require('gulp-imagemin')
    ,images      = 'images/**'
+   ,jpg         = ['images/**/*.jpg','images/**/*.JPG']
+   ,png         = 'images/**/*.png'
+   ,images      = 'images/**'
    ,imageWidth  = 1600
    ,thumbWt     = 420
-   ,thumbHt     = 280
+   ,thumbHt     = 420
 
 // Converts jpegs
 gulp.task('convert', function () {
- gulp.src( images )
+ gulp.src( jpg )
    .pipe(imagemin())
    .pipe(imageResize({
      width : imageWidth,
@@ -36,13 +39,14 @@ gulp.task('thumb', function () {
 
 // Converts pngs
 gulp.task('png', function () {
- gulp.src( images )
+ gulp.src( png )
    .pipe(imagemin())
    .pipe(imageResize({
      width : imageWidth,
      crop : false,
      upscale : false,
-     format: 'png'
+     format: 'png',
+     quality: .8
    }))
    .pipe(gulp.dest('./converted'));
 });
